@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,700;1,300;1,400;1,800&family=Lato:wght@100;300;400;700;900&family=Nunito:wght@400;700&display=swap');
+
+
+/* ANIMATIONS */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Establece la altura al 100% del viewport */
+  /* overflow-y: hidden; */
+  background-image: linear-gradient(to right bottom, rgba(8, 181, 238, 0.7), rgba(4, 82, 110, 0.7)),
+    url('https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+/* SEARCH BUTTON */
+
+
+.header__button {
+  position: relative;
+  display: flex;
+  justify-content: end;
+} 
+
+
+.header__button button {
+  margin-top: 15px;
+  margin-right: 25px;
+  color: white;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border: 0;
+  padding: 6px 12px;
+  background: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 100;
+  border: 2px solid transparent;
+}
+
+.header__button button:hover {
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+
+/* SEARCHBAR */
+.searchBar {
+  position: absolute;
+  visibility: hidden;
+  transform: translateY(-100%);
+  background-color: black;
+  padding: 4px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.container__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar.open {
+  display: flex;
+  justify-content: flex-end;
+  transform: translateY(0);
+  transition: transform 1s;
+}
+
+.searchBar.close {
+  transform: translateY(-100%);
+  transition: transform 2s;
+}
+
+.searchBar input {
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+
+/* BTN CLOSE */
+#searchClose {
+  top: .5px;
+  background-color: black;
+  padding: 6px 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 10px; 
+  border: 2px solid transparent;
+}
+  #searchClose:hover {
+  border-radius: 10px;
+  border: 2px solid white;
+  }
+
+/* MAIN */
+.container__header {
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 5rem;
+}
+
+.main {
+  margin-bottom: 5rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-family: 'Exo 2';
+  text-transform: uppercase;
+  width: 250px;
+  height: 45px;
+  margin: 20px 0;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: aliceblue;
+  transition: all 300ms ease;
+}
+.btn:hover {
+  color: aliceblue;
+  cursor: pointer;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* CARDS */
+
+.grid {
+  perspective: 15000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  };
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.cards {
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.cards {
+  transition: transform 0.9s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back,
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.front {
+  backface-visibility: hidden;
+}
+
+
+
+.back {
+  transform: rotateY(180deg) scale(1.1);
+  backface-visibility: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+img, .back {
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.9);
+
+}
+
+.cards.flip {
+  transform: rotateY(180deg);
+  background: transparent;
+}
+
+textBack {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  color: rgb(234, 224, 224);
+  font-size: 2rem;
+  text-align: center;
+  padding: 0 10px;
+  border: solid 1px white;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+author {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  color: grey;
+  font-size: 1.5rem;
+}
+
+author::before {
+  content: 'by ';
+}
