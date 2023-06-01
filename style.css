@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,700;1,300;1,400;1,800&family=Lato:wght@100;300;400;700;900&family=Nunito:wght@400;700&display=swap');
 
-
 /* ANIMATIONS */
 
 *,
@@ -17,7 +16,11 @@ body {
   padding: 0;
   height: 100vh; /* Establece la altura al 100% del viewport */
   /* overflow-y: hidden; */
-  background-image: linear-gradient(to right bottom, rgba(8, 181, 238, 0.7), rgba(4, 82, 110, 0.7)),
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(8, 181, 238, 0.7),
+      rgba(4, 82, 110, 0.7)
+    ),
     url('https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,16 +28,13 @@ body {
   background-attachment: fixed;
 }
 
-
 /* SEARCH BUTTON */
-
 
 .header__button {
   position: relative;
   display: flex;
   justify-content: end;
-} 
-
+}
 
 .header__button button {
   margin-top: 15px;
@@ -57,7 +57,6 @@ body {
   border: 2px solid white;
 }
 
-
 /* SEARCHBAR */
 .searchBar {
   position: absolute;
@@ -68,16 +67,19 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  right: 0;
 }
+
 .container__search {
+  width: 100%;
   display: flex;
+  justify-content: end;
   align-items: center;
-  justify-content: center;
 }
 
 .searchBar.open {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   transform: translateY(0);
   transition: transform 1s;
 }
@@ -88,27 +90,30 @@ body {
 }
 
 .searchBar input {
-  margin: 0;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
   border: 0;
-  width: 100%;
 }
 
 /* BTN CLOSE */
 #searchClose {
-  top: .5px;
+  font-family: 'Exo 2';
   background-color: black;
   padding: 6px 10px;
   color: white;
   cursor: pointer;
-  margin-top: 5px;
   text-align: center;
-  border-radius: 10px; 
+  border-radius: 10px;
   border: 2px solid transparent;
+  margin-right: 40px;
+  margin-bottom: auto;
+  margin-top: auto;
 }
-  #searchClose:hover {
+#searchClose:hover {
   border-radius: 10px;
   border: 2px solid white;
-  }
+}
 
 /* MAIN */
 .container__header {
@@ -164,7 +169,7 @@ body {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-  };
+  }
   80% {
     opacity: 0.8;
   }
@@ -203,17 +208,15 @@ img {
   backface-visibility: hidden;
 }
 
-
-
 .back {
   transform: rotateY(180deg) scale(1.1);
   backface-visibility: hidden;
   background: rgba(0, 0, 0, 0.7);
 }
 
-img, .back {
+img,
+.back {
   box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.9);
-
 }
 
 .cards.flip {
